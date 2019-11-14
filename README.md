@@ -10,7 +10,7 @@ In this project, we will be creating a chat application that will use sessions a
 - `cd` into the project.
 - Run `npm install`.
 
-## Step 1
+## Step 1 ( Completed )
 
 ### Summary
 
@@ -48,7 +48,7 @@ app.listen(SERVER_PORT, () => {
 
 </details>
 
-## Step 2
+## Step 2 ( Completed )
 
 ### Summary
 
@@ -118,7 +118,7 @@ module.exports = {
 
 </details>
 
-## Step 3
+## Step 3 ( Completed )
 
 ### Summary
 
@@ -146,7 +146,7 @@ In this step, we will set up the proxy so that all non text/html requests are fo
 
 </details>
 
-## Step 4
+## Step 4 ( Completed )
 
 ### Summary
 
@@ -252,7 +252,7 @@ app.use(
 
 </details>
 
-## Step 6
+## Step 6 ( Completed )
 
 ### Summary
 
@@ -308,7 +308,7 @@ module.exports = {
 
 </details>
 
-## Step 7
+## Step 7 ( Completed )
 
 ### Summary
 

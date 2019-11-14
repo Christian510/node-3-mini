@@ -1,18 +1,33 @@
+
+require( 'dotenv' ).config();
 const express = require( 'express' );
 const bodyParser = require( 'body-parser' );
-require( 'dotenv' ).config();
+const session = require('express-session');
+
+let { SERVER_PORT, SESSION_SECRET } = process.env;
+
 const app = express();
-const sv = require( './messageCtrl.js' );
 
 app.use( bodyParser.json() );
-const message = '/api/messages/';
-app.get( message, sv.getAllMessages );
-app.post( message, sv.createMessages );
+
+app.use( session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+const mc = require( './messageCtrl' );
+
+app.get( '/api/messages/', mc.getAllMessages );
+app.get( '/api/messages/history', mc.history )
+app.post( '/api/messages', mc.createMessage );
 
 
 // Whats the difference?
 // const port = process.env.PORT || 3000;
-let { SERVER_PORT } = process.env;
 
-app.listen( SERVER_PORT, () => `Listening on port ${SERVER_PORT}.`);
+
+app.listen( SERVER_PORT, () => {
+    console.log(`Listening on port ${SERVER_PORT}.`)
+});
 
